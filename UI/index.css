@@ -1,0 +1,45 @@
+body
+{
+background-color: aqua;
+background-image: url(intro-bg.jpg);
+}
+#Layer1 {
+	position:absolute;
+	left:185px;
+	top:15px;
+	width:350px;
+	height:149px;
+    z-index:1;
+}
+.style1 {font-size: 100px}
+#Layer2{
+    position:absolute;
+    left:1000px;
+    top:15px;
+    width:280px;
+    height:50px;
+    z-index:1;
+}
+#Layer3{
+    position:absolute;
+    left:100px;
+    top:300px;
+    width:500px;
+    height:200px;
+    z-index:2;
+}
+#Layer4 {
+	position:absolute;
+	left:91px;
+	top:661px;
+	width:200px;
+	height:8px;
+    z-index:18;
+}
+#Layer5{
+    position:absolute;
+    left:500px;
+    top:20px;
+    width:500px;
+    z-index:2;
+}
