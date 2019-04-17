@@ -41,9 +41,9 @@ input[type=text], select {
     background-color: #f2f2f2;
     padding: 20px;
   }
-  #Layer5{
+  .Layer5{
     position:absolute;
-    left:500px;
+    left:450px;
     top:20px;
     width:500px;
     z-index:2;
@@ -52,3 +52,9 @@ h2{
     text-align: center;
     text-emphasis:bold;
   }
+#form{
+  position:absolute;
+  left:450px;
+  top:150px;
+  width:500px;
+}
