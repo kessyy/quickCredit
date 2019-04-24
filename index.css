@@ -3,6 +3,22 @@ body
 background-color: aqua;
 background-image: url(intro-bg.jpg);
 }
+.bigscreen-menu-nav {
+  display: inline-block;
+  float: right;
+  margin: 10px 20px;
+}
+
+.bigscreen-menu-nav ul {
+  height: 50px;
+}
+.header-nav-item {
+  margin: auto;
+}
+
+.header-nav-item a:visited{
+  color: rgb(133, 119, 119);
+}
 #Layer1 {
 	position:absolute;
 	left:185px;
@@ -11,7 +27,8 @@ background-image: url(intro-bg.jpg);
 	height:149px;
     z-index:1;
 }
-.style1 {font-size: 100px}
+.style1 {font-size: 100px;}
+.style2 {font-size: 50px;}
 #Layer2{
     position:absolute;
     left:1000px;
@@ -42,4 +59,22 @@ background-image: url(intro-bg.jpg);
     top:20px;
     width:500px;
     z-index:2;
+}
+
+#Layer6 {
+    position:absolute;
+    left:1000px;
+    top:661px;
+    width:200px;
+    height:8px;
+    z-index:3;
+}
+
+#Layer7 {
+    position:absolute;
+    left:155px;
+    top:15px;
+    width:350px;
+    height:100px;
+    z-index:1;
 }
