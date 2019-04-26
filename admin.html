@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <script src="admin.js">
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li class="header-nav-item"><a href="index.html">Home</a></li>
+        <li class="header-nav-item"><a href="index.html">Sign-out</a></li>
+        <li class="header-nav-item"><a href="#">About Us</a></li>
+        <li class="header-nav-item"><a href="#">Contact Us</a></li>
+            </ul>
+    <section>
+        <div>
+
+            <div class="admin-control-panel-container">
+                    <button class="admin-tab" onclick="openAdminManageTab(event, 'all-loans')">All loans</button>
+                    <button class="admin-tab" onclick="openAdminManageTab(event, 'paid-loans')">Paid loan</button>
+                    <button class="admin-tab" onclick="openAdminManageTab(event, 'unpaid-loans')">Unpaid loans</button>
+                </div>
+            </header>
+        </div>
+    </section>
+
+    <section id="all-loans" class="manage-loans">
+        <input type="text" id="all-loans" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        <section class="data-tables">
+            <div class="table-container reports-table">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Names</th>
+                        <th>Address</th>
+                        <th>Loan amount</th>
+                        <th>Instalments</th>
+                        <th>Amount paid</th>
+                        <th>Amount Pending</th>
+                        <th>Status</th>
+                        <th>Verified</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Karungi Esther</td>
+                        <td>Uganda</td>
+                        <td>2,000,000.00</td>
+                        <td>500,000.0</td>
+                        <td>1,000,000.00</td>
+                        <td>1,000,000.00</td>
+                        <td><span class="badge-status"><select>
+                                    <option value="Approved">Approved</option>
+                                    <option value="Denied">Denied</option>
+                                </select></span> </td>
+                        <td><form><input type="checkbox" value="Verified">Verified</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="table-container reports-summary-table">
+                <h3> All loans summary</h3>
+                <table>
+                    <tr>
+                        <th>Approved</th>
+                        <th>Rejected</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+    </section>
+
+    <section id="paid-loans" class="manage-loans">
+        <section class="data-tables">
+            <div class="table-container reports-table">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Loan Amount</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Karungi Esther</td>
+                        <td>Ugnda</td>
+                        <td>2,000,000.00</td>
+                    </tr>
+
+                </table>
+            </div>
+
+             <div class="table-container reports-summary-table">
+                <h3>paid loans suummary</h3>
+                <table>
+                    <tr>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+    </section>
+
+    <section id="unpaid-loans" class="manage-loans">
+        <section class="data-tables">
+            <div class="table-container reports-table">
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>address</th>
+                        <th>Loan Amount</th>
+                        <th>Amount Paid</th>
+                        <th>Amount Pending</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Karungi Esther</td>
+                        <td>Uganda</td>
+                        <td>2,000,000.00</td>
+                        <td>1,000,000.00</td>
+                        <td>1,000,000.00</td>
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+    </section>
+
+
+</body>
+
+</html>
+
