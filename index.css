@@ -1,17 +1,44 @@
 body
 {
-background-color: aqua;
+height: 100%;
 background-image: url(intro-bg.jpg);
+}
+.header {
+  text-align: center;
+  background: white;
+}
+
+
+.menu {
+    background-color: rgb(132, 123, 123);
+    text-align: right;
+    line-height: 70px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(226, 224, 224);
+    margin: 0 10px;
+}
+.menu a:visited {
+    text-decoration: none;
+    color: blue;
+    margin: 0 10px;
+}
+a:hover {
+  color: rgb(58, 178, 248);
+  background-color: #FFFFFF;
 }
 #Layer1 {
 	position:absolute;
-	left:185px;
-	top:15px;
-	width:350px;
-	height:149px;
+	left:100px;
+	top:60px;
+	width:300px;
+	height:100px;
     z-index:1;
 }
-.style1 {font-size: 100px}
+.style1 {font-size: 80px;}
+.style2 {font-size: 50px;}
 #Layer2{
     position:absolute;
     left:1000px;
@@ -42,4 +69,114 @@ background-image: url(intro-bg.jpg);
     top:20px;
     width:500px;
     z-index:2;
+}
+
+#Layer6 {
+    position:absolute;
+    left:1000px;
+    top:661px;
+    width:200px;
+    height:8px;
+    z-index:3;
+}
+
+#Layer7 {
+    position:absolute;
+    left:155px;
+    top:15px;
+    width:350px;
+    height:100px;
+    z-index:1;
+}
+/* Media Responsive */
+@media screen and (max-width: 1050px) {
+.menu{
+    text-align: center;
+    width: 100%;
+}
+#Layer1{
+    width: 100%;
+    left: 10px
+}
+.wrapper{
+    width: 100%;
+    font-size: 20px;
+    font-family: arial;  
+}
+#Layer3{
+    width: 100%;
+    left: 10px;
+}
+#Layer4{
+    width: 100%;
+    left: 10px;
+    top: 500px;
+}
+#Layer6{
+    width: 100px;
+    left: 10px;
+    top: 600px;
+}
+}
+
+@media screen and (max-width: 800px) {
+a.mylink{
+    display:block;
+}
+.menu{
+    text-align: center;
+    width: 100%;
+}
+#Layer1{
+    display: none;
+}
+.wrapper{
+    width: 100%;
+    font-size: 20px;
+    font-family: arial;
+}
+#Layer3{
+    width: 100%;
+    left: 10px;
+}
+#Layer4{
+    width: 100%;
+    left: 10px;
+    top: 500px;
+}
+#Layer6{
+    width: 100px;
+    left: 10px;
+    top: 600px;
+}
+}
+
+@media screen and (max-width: 400px){
+a.mylink{
+    display:block;
+}
+.menu{
+    text-align: center;
+    width: 100%;
+}
+#Layer1{
+    display: none;
+}
+.wrapper{
+    width: 100%;
+}
+#Layer3{
+    width: 100%;
+    left: 10px;
+}
+#Layer4{
+    width: 100%;
+    left: 10px;
+    top: 500px;
+}
+#Layer6{
+    width: 100px;
+    left: 10px;
+    top: 600px;
+}
 }
