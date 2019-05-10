@@ -14,7 +14,7 @@ const { newUser } = require('../helpers/helper');
 const signup = (req, res) => {
   const { error } = validateSignUp(req.body);
   if (error) {
-    return res.status(403).json({status: 403, message: error.details[0].message,
+    return res.status(422).json({status: 422, message: error.details[0].message,
     });
   }
   
@@ -46,8 +46,8 @@ const userInfo = [id, firstName, lastName, email,
 const signin = (req, res) => {
   const { error } = validateLogIn(req.body);
   if (error) {
-    return res.status(403).json({
-      status: 403, message: error.details[0].message,
+    return res.status(422).json({
+      status: 422, message: error.details[0].message,
     });
   }
 

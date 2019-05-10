@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const chai = require('chai');
 const { expect } = require('chai');
 chai.use(require('chai-http'));
@@ -18,7 +17,6 @@ describe('All Routes', () => {
         password: 'asdf',
       })
       .then((res) => {
-        // eslint-disable-next-line prefer-destructuring
         token = res.body.token;
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('status');
