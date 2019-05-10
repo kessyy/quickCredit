@@ -1,0 +1,122 @@
+@charset "utf-8";
+body, html {
+  background-image: url(intro-bg.jpg);
+}
+
+.header {
+  text-align: center;
+  background: white;
+}
+
+
+.menu {
+    background-color: rgb(132, 123, 123);
+    text-align: right;
+    line-height: 70px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: rgb(226, 224, 224);
+    margin: 0 10px;
+}
+.menu a:visited {
+    text-decoration: none;
+    color: blue;
+    margin: 0 10px;
+}
+a:hover {
+  color: rgb(58, 178, 248);
+  background-color: #FFFFFF;
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 85%;
+  display: inline-block;
+  margin: 20px auto;
+  background-color: #FFFFFF;
+}
+
+th {
+  padding: 10px;
+  background-color: #e8e9ef;
+}
+
+td {
+  padding: 10px; 
+}
+
+tr {
+  border-bottom: #e8e9ef solid thin;
+}
+
+.badge-status {
+  background: rgb(58, 178, 248);
+  display: inline-block;
+  padding: 15px 10px;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+}
+/* admin panel styles */
+.admin-control-panel-container {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  margin: auto;
+  width: fit-content;
+}
+
+.admin-control-panel-container button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.admin-control-panel-container button.active {
+  background-color: #ccc;
+}
+
+.manage-loans {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/*Media Responsive*/
+@media screen and (max-width: 1050px){
+.menu{
+  text-align: center;
+  width: 100%;
+}
+}
+@media screen and (max-width: 800px){
+a.mylink{
+  display:block;
+}
+.menu{
+    text-align: center;
+    width: 100%;
+}
+}
+@media screen and (max-width: 400px){
+  a.mylink{
+    display:block;
+}
+.menu{
+    text-align: center;
+    width: 100%;
+}
+}
+
