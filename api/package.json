@@ -1,0 +1,44 @@
+{
+  "name": "quickcredit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "babel server.js --out-dir build",
+    "dev-start": "babel-watch server.js",
+    "test": "mocha './test/controllers.spec.js'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^15.0.1",
+    "@types/hapi__joi": "^15.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "eslint": "^5.16.0",
+    "express": "^4.16.4",
+    "helpers": "0.0.6",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "nodemon": "^1.19.0",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "router": "^1.3.3",
+    "swagger": "^0.7.5",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@types/node": "^12.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-watch": "^7.0.0",
+    "mocha": "^6.1.4"
+  },
+  "description": ""
+}
