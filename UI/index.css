@@ -1,13 +1,12 @@
 body
 {
 height: 100%;
-background-image: url(intro-bg.jpg);
+/* background-image: url(intro-bg.jpg); */
 }
 .header {
   text-align: center;
   background: white;
 }
-
 
 .menu {
     background-color: rgb(132, 123, 123);
@@ -58,7 +57,7 @@ a:hover {
 #Layer4 {
 	position:absolute;
 	left:91px;
-	top:661px;
+	top:600px;
 	width:200px;
 	height:8px;
     z-index:18;
@@ -87,6 +86,13 @@ a:hover {
     width:350px;
     height:100px;
     z-index:1;
+}
+#Layer8 {
+    position: absolute;
+    left: 700px;
+    top: 200px;
+    width: 350px;
+    height: 300px;
 }
 /* Media Responsive */
 @media screen and (max-width: 1050px) {
