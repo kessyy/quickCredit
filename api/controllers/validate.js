@@ -3,16 +3,12 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../helpers/config');
 const newUser = require('../helpers/helper')
+const loan = require('../helpers/helper')
 
 const hashPassword = password => bcrypt.hashSync(password, bcrypt.genSaltSync(8));
 //const hashPassword = password => bcrypt.hashSync(req.body.password, 8);
 
 const comparePassword = (hPassword, password) => bcrypt.compareSync(password, hPassword);
-/**
- *
- * @param {email} string
- * @returns {token} string
- **/
 
 // create a token
 const Token = (email) => {
@@ -37,7 +33,7 @@ const validateSignUp = (user) => {
 };
 
 /**
- * @param{details} string
+ * @param
  */
 const validateLogIn = (info) => {
   const schema = Joi.object().keys({
@@ -47,15 +43,18 @@ const validateLogIn = (info) => {
   return Joi.validate(info, schema);
 };
 
- /**
-  *
-  * @param {user} object
-  */
-
+const validateLoan = (loan) =>{
+  const schema = Joi.object().keys({
+    user: Joi.string().regex(/^[a-zA-Z]+$/).trim().required(),
+    address: Joi.string().regex(/^[a-zA-Z0-9]+$/).trim().required(),
+  });
+  return Joi.validate(loan, schema)
+}
 module.exports = {
   validateLogIn,
   validateSignUp,
   Token,
   hashPassword,
   comparePassword,
+  validateLoan
 };

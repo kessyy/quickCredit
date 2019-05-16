@@ -22,7 +22,7 @@ addToRepayments() {
     this.head = newNode;
     return this;
   }
-// locating items to use for validations
+// locating items to use for endpoints
 find(id) {
   let thisNode = this.head;
   while (thisNode) {
@@ -58,11 +58,22 @@ Email(email) {
   }
   return false;
 }
+loanuser(user) {
+  let thisNode = this.head;
+  while (thisNode){ 
+    if(thisNode.data.user === user) return thisNode.data;
+    thisNode = thisnode.next;
+  }
+  return false;
 }
 
+}
+//data is stored in a new linked list
 const newUser = new LinkedList();
+const Loan = new LinkedList();
 
 module.exports = {
   LinkedList,
   newUser,
+  Loan
 };

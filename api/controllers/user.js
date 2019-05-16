@@ -3,12 +3,6 @@ const {Token, hashPassword, comparePassword}  = require('./validate');
 const { validateSignUp, validateLogIn } = require('./validate');
 const { newUser } = require('../helpers/helper');
 
-
-/**
- * @param {res} object
- * @param {req} object
- *creating a signup*/
-
  let id = 1;
  let data;
 const signup = (req, res) => {
