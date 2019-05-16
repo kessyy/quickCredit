@@ -10,4 +10,31 @@ We live in a world where money is not always available but our needs never go on
   in the fastest time. 
 <br><br>
 This site is published at https://kessyy.github.io/quickCredit/UI/index.html
+<br><br>
+<strong>Features</strong><br>
+<ul>
+<li>A user can sign up</li>
+<li>A user can log in</li>
+<li>A client can request for only one loan at a time</li>
+<li>A client can view loan repayment history</li>
+<li>Admin can mark as verified and view a specific loan</li>
+<li>Admin can approve clients loan application</li>
+<li>Admin can view all repaid loans</li>
+</ul>
+<br><br>
+<strong>API endpoints</strong>
+<ul>
+<li>User sign in and validation</li>
+<li>User sign up and validation</li>
+<li>User can apply for a loan</li>
+<li>User can view loan history</li>
+<li>Admin can view current loans</li>
+<li>Admin can approve or reject loan</li>
+</ul>
+<br><br>
+<strong>Credit</strong><br>
+https://medium.freecodecamp.org/data-structures-101-linked-lists-254c82cf5883 <br>
+https://medium.com/front-end-weekly/data-structures-linked-list-implementation-in-js-3beb48ff49cd <br>
+https://www.codementor.io/olawalealadeusi896/building-simple-api-with-es6-krn8xx3k6 <br>
+
 
