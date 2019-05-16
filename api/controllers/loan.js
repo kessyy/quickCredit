@@ -29,6 +29,9 @@ const userInfo = [id, user, amount, email,
  });
  return;
 };
+
+
+
 module.exports = {
     createLoan
 }

@@ -67,6 +67,7 @@ loanuser(user) {
   return false;
 }
 
+
 }
 //data is stored in a new linked list
 const newUser = new LinkedList();
