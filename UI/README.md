@@ -28,8 +28,10 @@ This site is published at https://kessyy.github.io/quickCredit/UI/index.html
 <li>User sign up and validation</li>
 <li>User can apply for a loan</li>
 <li>User can view loan history</li>
-<li>Admin can view current loans</li>
-<li>Admin can approve or reject loan</li>
+<li>admin can view all loans</li>
+<li>Admin can view current loans(not fully repaid)</li>
+<li>Admin can view specific loan</li>
+<li>Admin can view all repaid loans</li>
 </ul>
 <br><br>
 <strong>Credit</strong><br>

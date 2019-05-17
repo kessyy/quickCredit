@@ -8,7 +8,7 @@ const { newUser, newRepayment } = require('../helpers/helper');
 const signup = (req, res) => {
   const { error } = validateSignUp(req.body);
   if (error) {
-    return res.status(422).json({status: 422, message: error.details[0].message,
+    return res.status(422).json({status: 422, data: error.details[0].message,
     });
   }
   
@@ -47,7 +47,7 @@ const signin = (req, res) => {
 
 const { email, password } = req.body;
   if (newUser.head === undefined || null) {
-    return res.status(404).json({ status: 404, error: 'you must be a user to signin' });
+    return res.status(422).json({ status: 422, error: 'you must be a user to signin' });
   }
 const cp = comparePassword(newUser.head.data.password, password);
 const result = Object.assign(newUser.Email(email));

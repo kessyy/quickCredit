@@ -2,8 +2,6 @@ const Joi = require('@hapi/joi')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('../helpers/config');
-const newUser = require('../helpers/helper')
-const loan = require('../helpers/helper')
 
 const hashPassword = password => bcrypt.hashSync(password, bcrypt.genSaltSync(8));
 //const hashPassword = password => bcrypt.hashSync(req.body.password, 8);
@@ -17,9 +15,6 @@ const Token = (email) => {
   }); return token;
 };
 
-/**
- * @param {user} object
- */
 //define validation schema
 const validateSignUp = (user) => {
   const schema = Joi.object().keys({

@@ -10,18 +10,16 @@ describe('All Routes', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        firstName: 'esther',
-        lastName: 'karungi',
-        email: 'kather@gmail.com',
+        firstName: 'Jane',
+        lastName: 'Doe',
+        email: 'user@gmail.com',
         address: 'kampala',
-        password: 'asdf',
+        password: 'qwerty',
       })
       .then((res) => {
-        token = res.body.token;
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('status');
         expect(res.body).to.have.property('data');
-        expect(res.body).to.have.property('token');
         done();
       })
       .catch(err => done(err));
@@ -30,11 +28,11 @@ describe('All Routes', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        firstName: 'esther',
-        lastName: 'esther',
-        email: 'kather@gmail.com',
+        firstName: 'Jane',
+        lastName: 'Doe',
+        email: 'user@gmail.com',
         address: 'kampala',
-        password: '123',
+        password: 'qwerty',
       })
       .then((res) => {
         expect(res.status).to.be.equal(422);
@@ -48,11 +46,11 @@ describe('All Routes', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        firstName: 'esther',
-        lastName: 'karungi',
-        email: 'kather@gmail.com',
+        firstName: 'Jane',
+        lastName: 'Doe',
+        email: 'user@gmail.com',
         address: 'kampala',
-        password: '123456',
+        password: 'qwerty',
       })
       .then((res) => {
         expect(res.status).to.be.equal(422);
@@ -65,7 +63,7 @@ describe('All Routes', () => {
   it('should login user', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
-      .send({ email: 'kather@gmail.com', password: '123456' })
+      .send({ email: 'user@gmail.com', password: 'qwerty' })
       .then((res) => {
         expect(res.status).to.be.equal(200);
         expect(res.body).to.have.property('token');
@@ -76,7 +74,7 @@ describe('All Routes', () => {
   it('should not login user with invalid details', (done) => {
     chai.request(app)
       .post('/api/v1/auth/signin')
-      .send({ email: 'kather@gmail.com', password: '12345' })
+      .send({ email: 'user@gmail.com', password: 'qwerty' })
       .then((res) => {
         expect(res.status).to.be.equal(422);
         expect(res.body).to.be.an('object');
@@ -85,10 +83,10 @@ describe('All Routes', () => {
       })
       .catch(error => done(error));
   });
-  it('should not login user with non-exist details(email), it should return 422', (done) => {
+  it('can not log in ghost user', (done) => {
     chai.request(app)
       .post('/api/v1/auth/user/signin')
-      .send({ email: 'kather@gmai.com', pin: '123456' })
+      .send({ email: 'user@gmail.com', pin: 'qwerty' })
       .then((res) => {
         expect(res.status).to.be.equal(422);
         expect(res.body).to.be.an('object');
@@ -101,19 +99,16 @@ describe('All Routes', () => {
     chai.request(app)
       .post('/api/v1/auth/signup')
       .send({
-        firstName: 'esther',
-        lastName: 'karungi',
-        email: 'admin@admin.com',
+        firstName: 'Jane',
+        lastName: 'Doe',
+        email: 'user@gmail.com',
         address: 'kampala',
-        password: '123456',
+        password: 'qwerty',
       })
       .then((res) => {
-        // eslint-disable-next-line prefer-destructuring
-        adminToken = res.body.token;
         expect(res.body).to.be.an('object');
         expect(res.body).to.have.property('status');
         expect(res.body).to.have.property('data');
-        expect(res.body).to.have.property('token');
         done();
       })
       .catch(err => done(err));
@@ -121,7 +116,6 @@ describe('All Routes', () => {
   it('should get all users successfully', (done) => {
     chai.request(app)
       .get('/api/v1/users')
-      .set('Authorization', adminToken)
       .then((res) => {
         expect(res.status).to.be.equal(200);
         expect(res.body).to.have.property('data');
@@ -132,8 +126,7 @@ describe('All Routes', () => {
 
   it('should verify a user', (done) => {
     chai.request(app)
-      .patch('/api/v1/users/kather@gmail.com/verify')
-      .set('Authorization', adminToken)
+      .patch('/api/v1/users/user@gmail.com/verify')
       .then((res) => {
         expect(res.status).to.be.equal(202);
         expect(res.body).to.have.property('message');
@@ -142,10 +135,9 @@ describe('All Routes', () => {
       .catch(error => done(error));
   });
 
-  it('should not verified a user successfully', (done) => {
+  it('should not verify a user successfully', (done) => {
     chai.request(app)
-      .patch('/api/v1/users/kather@gmai.com/verify')
-      .set('Authorization', adminToken)
+      .patch('/api/v1/users/user@gmail.com/verify')
       .then((res) => {
         expect(res.status).to.be.equal(404);
         expect(res.body).to.have.property('error');

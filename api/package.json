@@ -6,7 +6,9 @@
     "dev": "nodemon server.js",
     "build": "babel server.js --out-dir build",
     "dev-start": "babel-watch server.js",
-    "test": "mocha './test/controllers.spec.js'"
+    "test": "mocha './test/controllers.spec.js'",
+    "start": "node server.js",
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "author": "",
   "license": "ISC",
