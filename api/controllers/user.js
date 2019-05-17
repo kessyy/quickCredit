@@ -1,13 +1,7 @@
 const config = require('../helpers/config')
 const {Token, hashPassword, comparePassword}  = require('./validate');
 const { validateSignUp, validateLogIn } = require('./validate');
-const { newUser } = require('../helpers/helper');
-
-
-/**
- * @param {res} object
- * @param {req} object
- *creating a signup*/
+const { newUser, newRepayment } = require('../helpers/helper');
 
  let id = 1;
  let data;
@@ -69,7 +63,16 @@ const { bool, thisNode } = result;
   status: 401, message: 'not authorised',
    });
  };
+ //user can view repayment history
+const repayment = (req, res) => {
+  if (Object.keys(newRepayment).length > 0) {
+      res.status(200).json({ status: 200, data: [Loan]});
+  }else {
+      res.status(404).json({status:404, message:'data not found'})
+  }
+  }
 module.exports = {
   signup,
   signin,
+  repayment
 };

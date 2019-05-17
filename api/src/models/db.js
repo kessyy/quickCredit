@@ -8,7 +8,7 @@ class user {
       this.email = email;
       this.address = address;
       this.password = password;
-      this.status = 'unverified';
+      this.status = unverified;
       this.isAdmin = isAdmin;
       this.createdOn = Date();
     }();
