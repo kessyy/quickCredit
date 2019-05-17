@@ -1,7 +1,7 @@
 const config = require('../helpers/config')
 const {Token, hashPassword, comparePassword}  = require('./validate');
 const { validateSignUp, validateLogIn } = require('./validate');
-const { newUser } = require('../helpers/helper');
+const { newUser, newRepayment } = require('../helpers/helper');
 
  let id = 1;
  let data;
@@ -47,7 +47,7 @@ const signin = (req, res) => {
 
 const { email, password } = req.body;
   if (newUser.head === undefined || null) {
-    return res.status(422).json({ status: 422, error: 'you must be a user to signin' });
+    return res.status(404).json({ status: 404, error: 'you must be a user to signin' });
   }
 const cp = comparePassword(newUser.head.data.password, password);
 const result = Object.assign(newUser.Email(email));
@@ -63,7 +63,16 @@ const { bool, thisNode } = result;
   status: 401, message: 'not authorised',
    });
  };
+ //user can view repayment history
+const repayment = (req, res) => {
+  if (Object.keys(newRepayment).length > 0) {
+      res.status(200).json({ status: 200, data: [Loan]});
+  }else {
+      res.status(404).json({status:404, message:'data not found'})
+  }
+  }
 module.exports = {
   signup,
   signin,
+  repayment
 };

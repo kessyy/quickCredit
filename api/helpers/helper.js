@@ -31,7 +31,24 @@ find(id) {
   }
   return thisNode;
 }
-
+//locate repaid loans
+paid() {
+  let thisNode = this.head;
+  while (thisNode){
+    if (thisNode.data.repaid === true) return thisNode.data;
+    thisNode = thisNode.next;
+  }
+  return thisNode;
+}
+//locate not fully repaid loans
+unpaid(){
+  let thisNode = this.head;
+  while (thisNode){
+    if (thisNode.data.repaid === false) return thisNode.data;
+    thisNode = thisNode.next;
+  }
+  return thisNode;
+}
 checkCreds() {
   let thisNode = this.head;
   if (args.length === 2) {
@@ -72,9 +89,12 @@ loanuser(user) {
 //data is stored in a new linked list
 const newUser = new LinkedList();
 const Loan = new LinkedList();
-
+const newApplication = new LinkedList();
+const newRepayment = new LinkedList();
 module.exports = {
   LinkedList,
   newUser,
-  Loan
+  Loan,
+  newApplication,
+  newRepayment
 };

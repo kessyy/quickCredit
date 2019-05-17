@@ -1,7 +1,7 @@
 const { newUser, Loan } = require('../helpers/helper');
 const {Token}  = require('./validate');
 const {validateLoan} = require('./validate')
-
+//validate loan
 let id = 1;
 let data;
 const createLoan = (req, res) => {
@@ -10,7 +10,7 @@ const createLoan = (req, res) => {
    return res.status(422).json({status: 422, message: error.details[0].message,
    });
  }
- 
+//apply for loan 
 const { id, user, email, amount, address, paymentInstalment,} = req.body;
 
 const checkEmail = newUser.Email(email);
